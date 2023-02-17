@@ -1,0 +1,185 @@
+a {
+  color: white;
+}
+
+a:hover {
+  color: #1DA0F1;
+}
+
+.black-and-white { /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.center-xy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.btn-google {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-google:hover {
+  background-color: #AF4C4C;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px 0px #ab3d3d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-twitter {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-twitter:hover {
+  background-color: #1DA0F1;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px 0px #1887cc;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-facebook {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-facebook:hover {
+  background-color: #024682;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px 0px #00549D;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-github {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-github:hover {
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px 0px black;
+  color: white;
+  transform: translateY(-2px);
+}
+
+#main-page {
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+#main-page .main-logo {
+  height: 500px;
+  width: auto;
+}
+
+#login-page {
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+#login-page .login-container {
+  height: auto;
+  width: 500px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  padding: 2% 3%;
+}
+
+#register-page {
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+#register-page .register-container {
+  height: auto;
+  width: 500px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  padding: 2% 3%;
+}
+
+#data-page {
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+#data-page .data-container {
+  height: auto;
+  width: 500px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  padding: 2% 3%;
+}
+
+#game-page {
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#results-page {
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+#results-page .results-container {
+  height: auto;
+  width: 500px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  padding: 2% 3%;
+}/*# sourceMappingURL=styles.css.map */

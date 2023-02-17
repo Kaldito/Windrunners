@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windrunners</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="./public/css/styles.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/c1d78340ca.js" crossorigin="anonymous"></script> 
+    <!-- Phaser -->
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+
+</head>
+<body>
+    
+    <section class="center-xy" id="main-page">
+        <div>
+            <div class="main-logo">
+                <img style="height: 100%;" class="black-and-white" src="./public/img/windrunners-logo.webp" alt="windrunners-logo">
+            </div>
+            <div class="mt-3 row">
+                <div class="col-6">
+                    <button class="btn btn-outline-light btn-lg w-100" id="main-login">Iniciar Sesion</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-info btn-lg w-100" id="main-register">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="center-xy hide" id="login-page">
+        <div class="login-container">
+            <div>
+                <h1 class="text-center" style="color: white">Inicia Sesion</h1>
+            </div>
+            <div>
+                <input class="form-control form-control-lg mt-3" id="login-email-input" type="text" placeholder="Email">
+                <input class="form-control form-control-lg mt-2" id="password-email-input" type="text" placeholder="Contraseña">
+                <button class="btn btn-dark mt-2 btn-lg w-100" id="login-btn">Iniciar Sesion</button>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-5">
+                    <hr style="color: white">
+                </div>
+                <div class="col-2" style="text-align: center;">
+                    <p style="color: white">or</p>
+                </div>
+                <div class="col-5">
+                    <hr style="color: white">
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn-google" id="google-btn"><i class="fa-brands fa-google me-2"></i>Google</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-twitter" id="twitter-btn"><i class="fa-brands fa-twitter me-2"></i>Twitter</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn-facebook" id="facebook-btn"><i class="fa-brands fa-facebook me-2"></i>Facebook</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-github" id="github-btn"><i class="fa-brands fa-github me-2"></i>Github</button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center" style="color: white;">No tienes una cuenta? <a href="#" id="register-anchor">Registrate</a></p>
+        </div>
+    </section>
+
+    <section class="center-xy hide" id="register-page">
+        <div class="register-container">
+            <div>
+                <h1 class="text-center" style="color: white">Registrate</h1>
+            </div>
+            <div>
+                <input class="form-control form-control-lg mt-3" id="register-email-input" type="text" placeholder="Email">
+                <input class="form-control form-control-lg mt-2" id="register-password-input" type="text" placeholder="Contraseña">
+                <button class="btn btn-dark mt-2 btn-lg w-100" id="register-btn">Registrarme</button>
+            </div>
+            <p class="text-center mt-3" style="color: white;">Ya tienes una cuenta? <a href="#" id="login-anchor">Inicia Sesion</a></p>
+        </div>
+    </section>
+
+    <section class="center-xy hide" id="data-page">
+        <div class="data-container">
+            <div>
+                <h1 class="text-center" style="color: white">Acerca de ti</h1>
+                <p class="text-center mt-3" style="color: white;">Rellena los siguientes datos para completar tu cuenta.</p>
+            </div>
+            <div>
+                <input class="form-control form-control-lg mt-3" id="nickname" type="text" placeholder="Nickname">
+                <select class="form-select form-select-lg mt-2" id="region" aria-label=".form-select-lg example">
+                    <option selected>Selecciona tu pais</option>
+                    <option value="-103.40956,25.54223">Torreon</option>
+                    <option value="-103.50168,25.56781">Gomez</option>
+                    <option value="-103.52701,25.53583">Lerdo</option>
+                </select>
+                <button class="btn btn-dark mt-2 btn-lg w-100" id="update-btn">Enviar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="game-page" class="center-xy hide">
+        <div style="text-align: center;">
+            <div id="score-div" class="mb-4 hide" style="color: white;">
+                <h1>Tu puntaje fue de: <span id="score">0</span></h1>
+            </div>
+            <button class="btn btn-outline-light btn-lg" id="start-game">Empezar Juego</button>
+            <button class="btn btn-outline-light btn-lg hide" id="continue">Continuar</button>
+        </div>
+        <button class="btn btn-danger btn-lg" id="logout-btn" style="position: absolute; top: 25px; right: 25px;">Cerrar Sesion</button>
+    </section>
+
+    <section id="results-page" class="center-xy hide">
+        <div style="text-align: center;" class="results-container">
+            <h1 class="text-center" style="color: white;">Mejor Jugador</h1>
+            <div style="text-align: center;" id="ganadores">
+
+            </div>
+            <button class="btn btn-outline-light btn-lg" id="retry">Volver a jugar</button>
+        </div>
+    </section>
+
+    <!-- ------ SCRIPTS ------ -->
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Local JS -->
+    <script src="./src/index.js" type="module"></script>
+</body>
+</html>

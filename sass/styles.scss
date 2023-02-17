@@ -1,0 +1,144 @@
+// ---------- MIXINS---------- //
+@mixin background() {
+    background-image: url("../img/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+@mixin btn-custom() {
+    width: 100%;
+    color: black;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@mixin btn-custom-hover($color, $shadow) {
+    background-color: $color;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px 0px $shadow;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@mixin container-blur(){
+    height: auto;
+    width: 500px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 0.375rem;
+    backdrop-filter: blur(3.5px);
+    padding: 2% 3%;
+}
+
+// ---------- GLOBAL CLASSES ---------- //
+a {
+    color: white;
+}
+
+a:hover {
+    color: #1DA0F1;
+}
+
+.black-and-white {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.center-xy {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}
+
+// ---------- SOCIAL BUTTONS ---------- //
+.btn-google {
+    @include btn-custom();
+}
+
+.btn-google:hover {
+    @include btn-custom-hover(#AF4C4C, #ab3d3d);
+}
+
+.btn-twitter {
+    @include btn-custom();
+}
+
+.btn-twitter:hover {
+    @include btn-custom-hover(#1DA0F1, #1887cc);
+}
+
+.btn-facebook {
+    @include btn-custom();
+}
+
+.btn-facebook:hover {
+    @include btn-custom-hover(#024682, #00549D);
+}
+
+.btn-github {
+    @include btn-custom();
+}
+
+.btn-github:hover {
+    @include btn-custom-hover(black, black);
+}
+
+// ---------- MAIN PAGE ---------- //
+#main-page {
+    @include background();
+
+    .main-logo {
+        height: 500px;
+        width: auto;
+    }
+}
+
+// ---------- LOGIN PAGE ---------- //
+#login-page {
+    @include background();
+    
+    .login-container {
+        @include container-blur();
+    }
+}
+
+// ---------- LOGIN PAGE ---------- //
+#register-page {
+    @include background();
+    
+    .register-container {
+        @include container-blur();
+    }
+}
+
+// ---------- LOGIN PAGE ---------- //
+#data-page {
+    @include background();
+    
+    .data-container {
+        @include container-blur();
+    }
+}
+
+// ---------- GAME PAGE ---------- //
+#game-page {
+    @include background();
+}
+
+// ---------- RESULTS PAGE ---------- //
+#results-page {
+    @include background();
+
+    .results-container {
+        @include container-blur();
+    }
+}
