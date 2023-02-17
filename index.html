@@ -13,7 +13,8 @@
     <script src="https://kit.fontawesome.com/c1d78340ca.js" crossorigin="anonymous"></script> 
     <!-- Phaser -->
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
-
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
 </head>
 <body>
     
@@ -126,7 +127,7 @@
     <section id="results-page" class="center-xy hide">
         <div style="text-align: center;" class="results-container">
             <h1 class="text-center" style="color: white;">Mejor Jugador</h1>
-            <div style="text-align: center;" id="ganadores">
+            <div class="mb-3" style="text-align: center; color: red;" id="ganadores">
 
             </div>
             <button class="btn btn-outline-light btn-lg" id="retry">Volver a jugar</button>

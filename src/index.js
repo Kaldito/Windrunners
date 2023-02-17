@@ -529,10 +529,29 @@ onAuthStateChanged(auth, async (user) => {
                 const bestPlayers = await getDocs(q);
     
                 ganadores.innerHTML = ""
+
+                mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsZG8iLCJhIjoiY2xkdnZlMTJrMDE5bDNwcWZrNHY3ZWw4cyJ9.KJlCqPRoA0svUiAxgj1CRw';
     
                 bestPlayers.forEach((doc) => {
-                    console.log(doc.data());
-                    ganadores.innerHTML += `<h2 style:"color: black">${doc.data().nickname} - ${doc.data().score}puntos</h2><div id="${doc.data().nickname}"></div>`
+                    ganadores.innerHTML += `<h2>${doc.data().nickname} - ${doc.data().score}puntos</h2><div style="height: 200px; width: 300px; margin: auto;" id="${doc.data().id}"></div>`
+
+                    let region_string = doc.data().region;
+                    let coords = region_string.split(",");
+                    let cordx = parseFloat(coords[0]);
+                    let cordy = parseFloat(coords[1]);
+
+                    const map = new mapboxgl.Map({
+                        container: doc.data().id,
+                        style: 'mapbox://styles/mapbox/streets-v12', 
+                        center: [cordx, cordy], 
+                        zoom: 9 
+                    });
+
+                    const marker = new mapboxgl.Marker()
+                    .setLngLat([cordx, cordy])
+                    .addTo(map)
+
+                    return;
                 });
     
                 scoreDiv.classList.add("hide");
@@ -546,6 +565,9 @@ onAuthStateChanged(auth, async (user) => {
             dataPage.classList.remove("hide");
             
             updateBtn.addEventListener("click", async function(){
+                const q = query(collection(db, "users"), where("nickname", "==", nicknameInput.value));
+                const same = await getDocs(q);
+
                 if(nicknameInput.value != ""){
                     try{
                         await setDoc(doc(db, "users", user.uid), {
@@ -559,12 +581,12 @@ onAuthStateChanged(auth, async (user) => {
                     } catch(err){
                         console.log(err);
                     }
-              
-                    
+                
                     window.location.reload()
                 } else {
                     alert("No dejes ningun input vacio!");
                 }
+                
             })
         }
 
